@@ -42,7 +42,7 @@ gameover_font = pygame.font.SysFont(None, gameover_font_size)
 instruction_font = pygame.font.SysFont(None, instruction_font_size)
 
 #IMPORT APPLE PNG
-APPLE_IMAGE = pygame.image.load(os.path.join("ASSETS", 'Apple.png'))
+APPLE_IMAGE = pygame.image.load(os.path.join("D:\PyProjects\Snake\ASSETS", 'Apple.png'))
 apple = pygame.transform.scale(APPLE_IMAGE, (apple_size, apple_size))
 
 #TOP WRITING AND WINDOW SIZE + UPDATE
@@ -51,7 +51,7 @@ display = pygame.display.set_mode((Screen_width, Screen_height))
 pygame.display.update()
 
 #IMPORT TITLE PNG
-TITLE_IMAGE = pygame.image.load(os.path.join("ASSETS", 'Title.png'))
+TITLE_IMAGE = pygame.image.load(os.path.join("D:\PyProjects\Snake\ASSETS", 'Title.png'))
 title = pygame.transform.scale(TITLE_IMAGE, (Title_width, Title_height))
 
 #MAKING CENTRED TEXT ACCESSABLE
@@ -122,7 +122,7 @@ def gameover_screen():
                 gameloop()
                 
 #MUSICCCCCCC
-music = pygame.mixer.Sound(os.path.join("ASSETS", 'Music.mp3'))
+music = pygame.mixer.Sound(os.path.join("D:\PyProjects\Snake\ASSETS", 'Music.mp3'))
 #                            loops   ms played   fade in
 pygame.mixer.Sound.play(music, 500, 2000000000, 8000)
 pygame.mixer.Sound.set_volume(music, volume)
@@ -132,7 +132,7 @@ gameplay = False
 entry_screen = True 
 while entry_screen:
     #READ HIGHSCORE .TXT
-    highscore_file = open(os.path.join("ASSETS", 'Highscore.txt'))
+    highscore_file = open(os.path.join("D:\PyProjects\Snake\ASSETS", 'Highscore.txt'))
     highscore = highscore_file.read()
     #BACKGROUNT COLOUR AND INSTRUCTION TEXT
     display.fill(Background_colour)
@@ -179,7 +179,7 @@ def gameloop():
 
     while gameplay:
         #READ HIGHSCORE .TXT
-        highscore_file = open(os.path.join("ASSETS", 'Highscore.txt'))
+        highscore_file = open(os.path.join("D:\PyProjects\Snake\ASSETS", 'Highscore.txt'))
         highscore = highscore_file.read()
         
         for event in pygame.event.get():
@@ -260,10 +260,10 @@ def gameloop():
         #HIGHSCORE 
         if int(points) > int(highscore):
             #READ HIGHSCORE .TXT
-            highscore_file = open(os.path.join("ASSETS", 'Highscore.txt'))
+            highscore_file = open(os.path.join("D:\PyProjects\Snake\ASSETS", 'Highscore.txt'))
             highscore = highscore_file.read()
             #UPDATE PROLLY?
-            updatehs = open(os.path.join("ASSETS", 'Highscore.txt'), "w")
+            updatehs = open(os.path.join("D:\PyProjects\Snake\ASSETS", 'Highscore.txt'), "w")
             updatehs.write(str(points))
             updatehs.close()
 
